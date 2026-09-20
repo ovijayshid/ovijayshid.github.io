@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顺德碧桂园业主论坛-社区生活交流与业主互助平台</title>
+    <meta name="description" content="顺德碧桂园业主论坛提供最新的小区新闻、物业报修、二手交易、邻里互助及装修交流服务。欢迎各位业主注册发帖，共建和谐美好社区。">
+    <meta name="keywords" content="顺德碧桂园,顺德碧桂园业主论坛,顺德碧桂园业主群,碧桂园物业,顺德碧桂园二手交易,顺德碧桂园装修">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --secondary-color: #1976d2;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s, transform 0.1s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #ffebee 100%);
+            padding: 40px var(--spacing-md);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-main);
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: var(--spacing-lg);
+            flex: 1;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .category-list a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .category-list a:hover, .category-list a.active {
+            background-color: #ffebee;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .count {
+            background-color: #eee;
+            color: #666;
+            font-size: 0.8rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+        }
+
+        .quick-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            padding: 8px;
+            text-align: center;
+            background: #f9f9f9;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .quick-link:hover {
+            background: #eee;
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 18px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .topic-item {
+            background: var(--card-bg);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            display: flex;
+            gap: var(--spacing-md);
+            transition: box-shadow 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .topic-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: var(--border-color);
+        }
+
+        .topic-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: #eee;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .topic-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topic-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .topic-title a {
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
+        .topic-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .topic-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .topic-tag {
+            background-color: #e3f2fd;
+            color: var(--secondary-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .topic-tag.urgent {
+            background-color: #ffebee;
+            color: var(--primary-color);
+        }
+
+        .topic-stats {
+            display: flex;
+            gap: 16px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+        }
+
+        .stat-num {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Featured Banner */
+        .banner-card {
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner-content {
+            max-width: 60%;
+            z-index: 2;
+        }
+
+        .banner-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .banner-content p {
+            opacity: 0.9;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .banner-bg {
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            width: 200px;
+            height: 200px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        /* Notice Board */
+        .notice-board {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: var(--spacing-md);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .notice-icon {
+            color: #ff9800;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            padding: 40px var(--spacing-md) 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #cfd8dc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid #37474f;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                flex-direction: column;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            .nav-menu {
+                width: 100%;
+                justify-content: space-between;
+                font-size: 0.9rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none; /* Hide sidebar on mobile for simplicity */
+            }
+
+            .topic-item {
+                flex-direction: column;
+            }
+
+            .topic-stats {
+                width: 100%;
+                justify-content: flex-start;
+                margin-top: 8px;
+                padding-top: 8px;
+                border-top: 1px solid #f0f0f0;
+            }
+
+            .banner-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner-content {
+                max-width: 100%;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <span>顺德碧桂园业主论坛</span>
+        </a>
+        <nav class="nav-menu">
+            <a href="#">首页</a>
+            <a href="#">二手交易</a>
+            <a href="#">装修讨论</a>
+            <a href="#">邻里互助</a>
+            <a href="#">物业报修</a>
+        </nav>
+        <div class="user-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">注册</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>共建和谐社区，畅享美好生活</h1>
+    <p>这里是顺德碧桂园业主们专属的交流平台，涵盖小区资讯、房屋交易、装修经验分享及邻里互助。请文明发帖，共同维护良好的社区环境。</p>
+    <div class="search-bar">
+        <input type="text" placeholder="搜索帖子、板块或用户...">
+        <button class="btn btn-primary">搜索</button>
+    </div>
+</section>
+
+<main class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-card">
+            <div class="sidebar-title">热门板块</div>
+            <ul class="category-list">
+                <li><a href="#" class="active"><span>综合讨论</span> <span class="count">1.2k</span></a></li>
+                <li><a href="#"><span>二手交易</span> <span class="count">856</span></a></li>
+                <li><a href="#"><span>房屋装修</span> <span class="count">532</span></a></li>
+                <li><a href="#"><span>生活服务</span> <span class="count">320</span></a></li>
+                <li><a href="#"><span>物业报修</span> <span class="count">120</span></a></li>
+                <li><a href="#"><span>失物招领</span> <span class="count">45</span></a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="sidebar-title">快速链接</div>
+            <div class="quick-links">
+                <a href="#" class="quick-link">联系物业</a>
+                <a href="#" class="quick-link">社区公告</a>
+                <a href="#" class="quick-link">活动报名</a>
+                <a href="#" class="quick-link">意见反馈</a>
+            </div>
+        </div>
+
+        <div class="sidebar-card">
+            <div class="sidebar-title">数据统计</div>
+            <div style="display: flex; justify-content: space-around; text-align: center;">
+                <div>
+                    <div style="font-size: 1.2rem; font-weight: bold; color: var(--primary-color);">12k+</div>
+                    <div style="font-size: 0.8rem; color: #666;">注册业主</div>
+                </div>
+                <div>
+                    <div style="font-size: 1.2rem; font-weight: bold; color: var(--secondary-color);">5.6k</div>
+                    <div style="font-size: 0.8rem; color: #666;">活跃帖子</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Content -->
+    <section class="content-area">
+        
+        <!-- Notice -->
+        <div class="notice-board">
+            <span class="notice-icon">📢</span>
+            <div>
+                <strong>社区公告：</strong> 关于小区中心花园绿化升级改造的通知及临时停车指引。
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <article class="banner-card">
+            <div class="banner-bg"></div>
+            <div class="banner-content">
+                <h2>2024年社区邻里文化节</h2>
+                <p>为了增进邻里感情，丰富业主的业余生活，社区将于下月举办邻里文化节。包含亲子游戏、厨艺展示及跳蚤市场活动。</p>
+                <a href="#" class="btn btn-primary" style="background-color: white; color: var(--primary-color);">查看详情</a>
+            </div>
+        </article>
+
+        <!-- Hot Topics -->
+        <div>
+            <div class="section-header">
+                <h2 class="section-title">热门话题</h2>
+                <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">查看更多 &rarr;</a>
+            </div>
+            <div class="topic-list">
+                
+                <article class="topic-item">
+                    <div class="topic-avatar">
+                        <img src="https://picsum.photos/seed/user1/100/100" alt="User Avatar">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-title">
+                            <a href="#">【求助】关于12栋电梯频繁故障的反馈，希望能尽快维修</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span class="topic-tag urgent">物业报修</span>
+                            <span>发布于：2小时前</span>
+                            <span>作者：12栋-张先生</span>
+                        </div>
+                    </div>
+                    <div class="topic-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">45</span>
+                            <span class="stat-label">回复</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">128</span>
+                            <span class="stat-label">浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="topic-item">
+                    <div class="topic-avatar">
+                        <img src="https://picsum.photos/seed/user2/100/100" alt="User Avatar">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-title">
+                            <a href="#">出售：碧桂园三期精装两房，家具家电齐全，价格面议</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span class="topic-tag">二手交易</span>
+                            <span>发布于：5小时前</span>
+                            <span>作者：置业小王</span>
+                        </div>
+                    </div>
+                    <div class="topic-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">12</span>
+                            <span class="stat-label">回复</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">340</span>
+                            <span class="stat-label">浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="topic-item">
+                    <div class="topic-avatar">
+                        <img src="https://picsum.photos/seed/user3/100/100" alt="User Avatar">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-title">
+                            <a href="#">【装修日记】水电改造避坑指南，给大家分享一下我的经验</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span class="topic-tag">装修讨论</span>
+                            <span>发布于：1天前</span>
+                            <span>作者：硬装达人</span>
+                        </div>
+                    </div>
+                    <div class="topic-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">89</span>
+                            <span class="stat-label">回复</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">1.2k</span>
+                            <span class="stat-label">浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="topic-item">
+                    <div class="topic-avatar">
+                        <img src="https://picsum.photos/seed/user4/100/100" alt="User Avatar">
+                    </div>
+                    <div class="topic-content">
+                        <div class="topic-title">
+                            <a href="#">寻找丢失的泰迪犬，特征：黄色，脖子上戴蓝色项圈</a>
+                        </div>
+                        <div class="topic-meta">
+                            <span class="topic-tag">邻里互助</span>
+                            <span>发布于：3小时前</span>
+                            <span>作者：爱心人士</span>
+                        </div>
+                    </div>
+                    <div class="topic-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">23</span>
+                            <span class="stat-label">回复</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">156</span>
+                            <span class="stat-label">浏览</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2 class="section-title">最新动态</h2>
+            <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">查看更多 &rarr;</a>
+        </div>
+        <div class="topic-list">
+            <article class="topic-item">
+                <div class="topic-content">
+                    <div class="topic-title">
+                        <a href="#">请问小区门口的快递柜最近维护了吗？取件有点困难</a>
+                    </div>
+                    <div class="topic-meta">
+                        <span>发布于：10分钟前</span>
+                        <span>作者：业主小李</span>
+                    </div>
+                </div>
+            </article>
+            <article class="topic-item">
+                <div class="topic-content">
+                    <div class="topic-title">
+                        <a href="#">周末亲子活动报名人数已满，感谢大家的热情参与！</a>
+                    </div>
+                    <div class="topic-meta">
+                        <span>发布于：2小时前</span>
+                        <span>作者：社区管理员</span>
+                    </div>
+                </div>
+            </article>
+            <article class="topic-item">
+                <div class="topic-content">
+                    <div class="topic-title">
+                        <a href="#">求助：哪位邻居有好的水电工推荐？家里水管爆了</a>
+                    </div>
+                    <div class="topic-meta">
+                        <span>发布于：4小时前</span>
+                        <span>作者：急需帮助</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于论坛</h4>
+            <ul>
+                <li><a href="#">论坛简介</a></li>
+                <li><a href="#">版主招募</a></li>
+                <li><a href="#">社区公约</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助中心</h4>
+            <ul>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">账号安全</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>友情链接</h4>
+            <ul>
+                <li><a href="#">顺德碧桂园物业</a></li>
+                <li><a href="#">顺德本地生活</a></li>
+                <li><a href="#">社区团购</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系方式</h4>
+            <p style="font-size: 0.9rem; color: #90a4ae;">客服热线：0757-12345678</p>
+            <p style="font-size: 0.9rem; color: #90a4ae;">工作时间：周一至周日 9:00-21:00</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 顺德碧桂园业主论坛 版权所有 | 仅供本地业主交流使用</p>
+    </div>
+</footer>
+
+</body>
+                                                         </html>
