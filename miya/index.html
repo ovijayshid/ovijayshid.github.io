@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="密芽 - 专业儿童早期教育与亲子成长服务平台。提供适龄绘本推荐、亲子阅读指南、家庭教育课程及专家咨询，助力孩子探索世界，陪伴快乐成长。">
+    <meta name="keywords" content="密芽,儿童绘本推荐,亲子阅读,早期教育,家庭教育,绘本故事">
+    <title>密芽 - 亲子成长与儿童早期教育服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #FF9A9E;
+            --primary-dark: #F67075;
+            --secondary-color: #4A90E2;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #F9F9F9;
+            --bg-white: #FFFFFF;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(246, 112, 117, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(246, 112, 117, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(to right, #fff0f3 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-main);
+        }
+
+        .hero-text h1 span {
+            color: var(--primary-dark);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-lg);
+            max-width: 500px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        /* Features Section */
+        .features {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-card {
+            padding: var(--spacing-lg);
+            background: var(--bg-body);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: white;
+            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: var(--spacing-md);
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Content Sections (Tabs) */
+        .content-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 30px;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Book List Styles */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .book-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .book-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .book-info {
+            padding: var(--spacing-md);
+        }
+
+        .book-tag {
+            font-size: 12px;
+            color: var(--secondary-color);
+            background: #e6f0fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .book-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Guide List Styles */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .guide-item {
+            display: flex;
+            background: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            align-items: center;
+            gap: var(--spacing-md);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .guide-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(74, 144, 226, 0.2);
+            line-height: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .guide-content p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-white);
+            padding: var(--spacing-lg) 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: var(--spacing-sm);
+            color: var(--text-light);
+            display: none;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto var(--spacing-lg);
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .guide-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">密芽<span>Miya</span></a>
+            <nav class="nav-links">
+                <a href="#features">平台优势</a>
+                <a href="#books">绘本推荐</a>
+                <a href="#guides">育儿指南</a>
+                <a href="#community">家长社区</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费注册</a>
+            </div>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>用阅读点亮孩子的<br><span>探索世界之旅</span></h1>
+                    <p>密芽汇聚全球优质绘本与亲子教育专家资源，为0-12岁儿童提供科学分级阅读方案，让每一次翻页都成为成长的阶梯。</p>
+                    <a href="#books" class="btn btn-primary">开始探索绘本</a>
+                    <a href="#guides" class="btn btn-outline" style="margin-left: 10px;">了解育儿知识</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for illustration -->
+                    <img src="https://picsum.photos/seed/miya_hero/500/350" alt="亲子阅读温馨场景" width="500" height="350">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择密芽？</h2>
+                    <p>专为现代家庭设计的全方位亲子成长伴侣</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>科学分级阅读</h3>
+                        <p>基于儿童心理学与阅读能力发展曲线，提供从启蒙到进阶的精准推荐体系。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👩‍🏫</div>
+                        <h3>专家育儿智库</h3>
+                        <p>邀请资深教育学者、儿童心理专家定期发布深度文章与视频解读。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>精选全球好书</h3>
+                        <p>严选来自欧美、日韩及国内的获奖绘本，涵盖科普、艺术、情商等多元主题。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Content Tabs -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>发现更多精彩</h2>
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'books')">热门绘本</button>
+                    <button class="tab-btn" onclick="openTab(event, 'guides')">育儿指南</button>
+                    <button class="tab-btn" onclick="openTab(event, 'activities')">亲子活动</button>
+                </div>
+
+                <!-- Tab 1: Books -->
+                <div id="books" class="tab-content active">
+                    <div class="book-grid">
+                        <article class="book-card">
+                            <img src="https://picsum.photos/seed/book1/200/280" alt="绘本封面" class="book-cover">
+                            <div class="book-info">
+                                <span class="book-tag">情商培养</span>
+                                <h3 class="book-title">我的情绪小怪兽</h3>
+                                <p class="book-author">安娜·耶纳斯</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <img src="https://picsum.photos/seed/book2/200/280" alt="绘本封面" class="book-cover">
+                            <div class="book-info">
+                                <span class="book-tag">科普认知</span>
+                                <h3 class="book-title">神奇校车</h3>
+                                <p class="book-author">乔安娜·柯尔</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <img src="https://picsum.photos/seed/book3/200/280" alt="绘本封面" class="book-cover">
+                            <div class="book-info">
+                                <span class="book-tag">经典文学</span>
+                                <h3 class="book-title">猜猜我有多爱你</h3>
+                                <p class="book-author">山姆·麦克布雷尼</p>
+                            </div>
+                        </article>
+                        <article class="book-card">
+                            <img src="https://picsum.photos/seed/book4/200/280" alt="绘本封面" class="book-cover">
+                            <div class="book-info">
+                                <span class="book-tag">创意想象</span>
+                                <h3 class="book-title">好饿的毛毛虫</h3>
+                                <p class="book-author">艾瑞·卡尔</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Guides -->
+                <div id="guides" class="tab-content">
+                    <div class="guide-list">
+                        <div class="guide-item">
+                            <div class="guide-number">01</div>
+                            <div class="guide-content">
+                                <h3>如何培养孩子的阅读习惯？</h3>
+                                <p>从每天15分钟开始，固定阅读时间，创造舒适的阅读环境，是建立习惯的关键。</p>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-number">02</div>
+                            <div class="guide-content">
+                                <h3>不同年龄段选书指南</h3>
+                                <p>0-3岁侧重感官刺激与色彩认知，4-6岁开始接触情节与角色，7岁+可尝试章节书。</p>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-number">03</div>
+                            <div class="guide-content">
+                                <h3>亲子共读的实用技巧</h3>
+                                <p>不要只读文字，多提问、多模仿角色、甚至可以让孩子参与翻页，让阅读充满乐趣。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Activities -->
+                <div id="activities" class="tab-content">
+                    <div class="guide-list">
+                        <div class="guide-item">
+                            <div class="guide-content">
+                                <h3>周末绘本剧场</h3>
+                                <p>精选经典绘本，提供角色扮演道具与剧本指导，带孩子走进故事世界。</p>
+                            </div>
+                        </div>
+                        <div class="guide-item">
+                            <div class="guide-content">
+                                <h3>创意手工坊</h3>
+                                <p>结合绘本内容的手工DIY教程，用粘土、纸张还原故事中的经典场景。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">密芽的内容是收费的吗？ <span>+</span></div>
+                        <div class="faq-answer">密芽提供部分免费的基础绘本试读和文章阅读。会员订阅可解锁全部绘本库、专家课程及专属社区特权。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">适合多大的孩子使用？ <span>+</span></div>
+                        <div class="faq-answer">密芽主要针对0-12岁的儿童及其家长。我们根据年龄和阅读能力进行了严格的分级，确保内容适龄。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何保证绘本内容的正版与质量？ <span>+</span></div>
+                        <div class="faq-answer">我们与全球多家知名出版社及版权方建立了直接合作关系，所有上架绘本均经过专业编辑团队的严格审核。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 15px;">密芽<span>Miya</span></div>
+                    <p style="color: #bdc3c7; font-size: 14px;">致力于为中国家庭提供最优质的早期阅读资源与教育服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 密芽 Miya. All Rights Reserved. 京ICP备12345678号
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Logic
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtn;
+            
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all buttons
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+            
+            // Show current tab and add active class to button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const answer = parent.querySelector('.faq-answer');
+                const icon = item.querySelector('span');
+                
+                if (parent.classList.contains('active')) {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                } else {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                }
+            });
+        });
+
+        // Mobile Menu Toggle (Simple implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            const navActions = document.querySelector('.nav-actions');
+            
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                navActions.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                
+                navActions.style.display = 'flex';
+                navActions.style.flexDirection = 'column';
+                navActions.style.position = 'absolute';
+                navActions.style.top = '320px'; // Adjust based on links height
+                navActions.style.left = '0';
+                navActions.style.width = '100%';
+                navActions.style.background = 'white';
+                navActions.style.padding = '0 20px 20px';
+            }
+        });
+    </script>
+</body>
+                                  </html>
