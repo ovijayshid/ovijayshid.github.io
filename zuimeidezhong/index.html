@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中秋诗词大全，收录李白、苏轼、王建等名家经典中秋诗句，赏析中秋诗词意境，提供中秋诗词在线阅读与学习资源。">
+    <meta name="keywords" content="最美的中秋诗词,中秋诗词,中秋古诗,中秋诗,李白中秋诗,苏轼中秋诗">
+    <title>最美的中秋诗词-中秋诗词赏析与经典名句收录</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #f39c12;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #ecf0f1;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --font-serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/moonfestival/1920/1080') no-repeat center center/cover;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Featured Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .poem-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+
+        .poem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .poem-header {
+            padding: 25px;
+            background: linear-gradient(to right, #fff, #fafafa);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .poem-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .poem-header .author {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .poem-body {
+            padding: 25px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .poem-body p {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .poem-body .last-line {
+            font-size: 1rem;
+            color: var(--text-light);
+            border-top: 1px dashed var(--border-color);
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+
+        .poem-footer {
+            padding: 15px 25px;
+            background-color: #f8f9fa;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #fff3e0;
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        /* List Section */
+        .list-section {
+            background-color: white;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .poem-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .list-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .list-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .list-author {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .list-arrow {
+            color: var(--text-light);
+        }
+
+        /* Features / Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            background: #fff8e1;
+            border-radius: 50%;
+        }
+
+        .info-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .list-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .list-arrow {
+                align-self: flex-end;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>诗词</span>中秋
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#featured">精选</a></li>
+                    <li><a href="#list">名篇</a></li>
+                    <li><a href="#culture">文化</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>最美的中秋诗词</h1>
+                <p>穿越千年的月光，在诗行间寻觅团圆的寄托与思乡的深情。</p>
+                <a href="#featured" class="hero-btn">开始阅读</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Intro -->
+            <section class="intro">
+                <div class="section-header">
+                    <h2>中秋诗词赏析</h2>
+                    <p>中秋节是中国的传统佳节，自古便有赏月、吃月饼、饮桂花酒等习俗。文人墨客在月圆之夜，将对亲人的思念、对时光的感慨寄托于笔端，留下了无数传颂千古的佳作。</p>
+                </div>
+            </section>
+
+            <!-- Featured Poems -->
+            <section id="featured">
+                <div class="section-header">
+                    <h2>必读经典</h2>
+                    <p>精选历代最脍炙人口的中秋诗词</p>
+                </div>
+
+                <div class="featured-grid">
+                    <!-- Poem 1 -->
+                    <article class="poem-card">
+                        <div class="poem-header">
+                            <h3>水调歌头·明月几时有</h3>
+                            <div class="author">宋·苏轼</div>
+                        </div>
+                        <div class="poem-body">
+                            <p>明月几时有？把酒问青天。</p>
+                            <p>不知天上宫阙，今夕是何年。</p>
+                            <p>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。</p>
+                            <p>起舞弄清影，何似在人间。</p>
+                            <div class="last-line">但愿人长久，千里共婵娟。</div>
+                        </div>
+                        <div class="poem-footer">
+                            <span class="tag">豪放</span>
+                            <span class="tag">思念</span>
+                        </div>
+                    </article>
+
+                    <!-- Poem 2 -->
+                    <article class="poem-card">
+                        <div class="poem-header">
+                            <h3>十五夜望月</h3>
+                            <div class="author">唐·王建</div>
+                        </div>
+                        <div class="poem-body">
+                            <p>中庭地白树栖鸦，冷露无声湿桂花。</p>
+                            <p>今夜月明人尽望，不知秋思落谁家。</p>
+                            <div class="last-line">（注：此诗为中秋望月思亲之佳作）</div>
+                        </div>
+                        <div class="poem-footer">
+                            <span class="tag">五言绝句</span>
+                            <span class="tag">思乡</span>
+                        </div>
+                    </article>
+
+                    <!-- Poem 3 -->
+                    <article class="poem-card">
+                        <div class="poem-header">
+                            <h3>月夜忆舍弟</h3>
+                            <div class="author">唐·杜甫</div>
+                        </div>
+                        <div class="poem-body">
+                            <p>戍鼓断人行，边秋一雁声。</p>
+                            <p>露从今夜白，月是故乡明。</p>
+                            <p>有弟皆分散，无家问死生。</p>
+                            <p>寄书长不达，况乃未休兵。</p>
+                            <div class="last-line">（注：露从今夜白，月是故乡明）</div>
+                        </div>
+                        <div class="poem-footer">
+                            <span class="tag">律诗</span>
+                            <span class="tag">感怀</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- List Section -->
+            <section id="list" class="list-section">
+                <div class="section-header">
+                    <h2>中秋诗词名篇</h2>
+                    <p>更多经典诗词收录</p>
+                </div>
+                <div class="poem-list">
+                    <a href="#" class="list-item">
+                        <div class="list-info">
+                            <div class="list-title">望月怀远</div>
+                            <div class="list-author">张九龄 · 唐</div>
+                        </div>
+                        <div class="list-arrow">→</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-info">
+                            <div class="list-title">八月十五夜月</div>
+                            <div class="list-author">杜甫 · 唐</div>
+                        </div>
+                        <div class="list-arrow">→</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-info">
+                            <div class="list-title">阳关曲·中秋月</div>
+                            <div class="list-author">苏轼 · 宋</div>
+                        </div>
+                        <div class="list-arrow">→</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-info">
+                            <div class="list-title">天竺寺八月十五日夜桂子</div>
+                            <div class="list-author">皮日休 · 唐</div>
+                        </div>
+                        <div class="list-arrow">→</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-info">
+                            <div class="list-title">中秋月</div>
+                            <div class="list-author">晏殊 · 宋</div>
+                        </div>
+                        <div class="list-arrow">→</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Culture Info -->
+            <section id="culture" class="container">
+                <div class="section-header">
+                    <h2>中秋文化</h2>
+                    <p>了解中秋节的起源与习俗</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">📜</div>
+                        <h4>起源传说</h4>
+                        <p>中秋节的起源有多种说法，包括嫦娥奔月、朱元璋抗元起义等传说，赋予了节日丰富的神话色彩。</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌙</div>
+                        <h4>赏月习俗</h4>
+                        <p>赏月是中秋节的核心活动，古人认为月圆象征团圆，此时登高望远，寄托对远方亲人的思念。</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🥮</div>
+                        <h4>吃月饼</h4>
+                        <p>月饼寓意团圆和睦，不同地区有不同的月饼口味和样式，是中秋佳节不可或缺的食品。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于诗词中秋</h4>
+                <p style="font-size: 0.9rem; color: #bdc3c7; line-height: 1.8;">
+                    本站致力于收录整理中国古典诗词，特别是与中秋、月亮相关的经典作品，为文学爱好者提供一个纯净的阅读与赏析平台。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>诗词分类</h4>
+                <ul>
+                    <li><a href="#">唐诗三百首</a></li>
+                    <li><a href="#">宋词精选</a></li>
+                    <li><a href="#">中秋专题</a></li>
+                    <li><a href="#">思乡名篇</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">联系站长</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 诗词中秋. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
