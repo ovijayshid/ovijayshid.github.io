@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="冲浪者遇鲨鱼逃生指南：分享真实案例、生存技巧、水域安全知识及紧急应对措施。了解如何在海洋中识别危险、保持冷静并成功逃离鲨鱼攻击。">
+    <meta name="keywords" content="冲浪者遇鲨鱼逃生, 鲨鱼攻击, 海洋安全, 水域生存, 冲浪安全">
+    <title>冲浪者遇鲨鱼逃生 - 海洋生存指南与水域安全知识</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #ee9b00;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --bg-light: #f5f6fa;
+            --white: #ffffff;
+            --max-width: 1200px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --spacing-xl: 64px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #d68910;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: var(--spacing-md);
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Survival Steps */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .step-item {
+            background: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+
+        .step-content p {
+            color: var(--text-light);
+        }
+
+        /* Safety Tips */
+        .tips-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .tip-item {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+        }
+
+        .tip-item strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: 8px;
+            margin-top: var(--spacing-xl);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: var(--spacing-md) 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid #333;
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-2, .tips-list {
+                grid-template-columns: 1fr;
+            }
+            .step-item {
+                flex-direction: column;
+            }
+            .step-number {
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                海洋安全网
+            </div>
+            <nav class="nav-links">
+                <a href="#intro">生存指南</a>
+                <a href="#prevention">预防措施</a>
+                <a href="#tips">实用技巧</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>冲浪者遇鲨鱼逃生</h1>
+        <p>面对海洋中的顶级掠食者，保持冷静、掌握正确的应对策略是生存的关键。本站提供详尽的水域安全知识、逃生步骤及心理建设指南。</p>
+        <a href="#intro" class="cta-button">开始学习逃生技巧</a>
+    </section>
+
+    <main>
+        <!-- 核心生存指南 -->
+        <section id="intro">
+            <h2 class="section-title">核心生存指南</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>保持绝对静止</h3>
+                        <p>发现鲨鱼靠近时，切勿惊慌失措地乱划水。迅速停止划动，双脚踩在冲浪板上，身体保持水平。惊慌会导致动作失控，增加被攻击的风险。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>切勿转身背对</h3>
+                        <p>绝对不要将背部或腹部暴露给鲨鱼。始终面向鲨鱼，保持眼神接触（研究表明注视鲨鱼可以减少攻击欲望）。慢慢将冲浪板移到身体前方，作为盾牌。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>制造噪音与威慑</h3>
+                        <p>如果有同伴，立即大声呼救并协调行动。如果单人在水中，用力拍打水面或用潜水镜敲击冲浪板，制造巨大的声响，试图吓退鲨鱼。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>缓慢撤退</h3>
+                        <p>在确认安全距离后，缓慢而坚定地向岸边或船只移动。避免突然加速，以免激起水花吸引鲨鱼。如果必须下板，确保在水中时保持漂浮状态。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预防措施与知识 -->
+        <section id="prevention">
+            <h2 class="section-title">预防措施与水域知识</h2>
+            <div class="grid-2">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/shark1/600/400" alt="海洋环境" class="card-img">
+                    <div class="card-content">
+                        <span class="card-tag">环境认知</span>
+                        <h3 class="card-title">避开鲨鱼活跃区域</h3>
+                        <p class="card-text">鲨鱼通常喜欢浑浊的水域、富含浮游生物的区域或黄昏和黎明时分。避免在这些时段独自前往未开发的陌生海域冲浪。</p>
+                        <a href="#" class="card-link">了解水域地图</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://picsum.photos/seed/shark2/600/400" alt="受伤处理" class="card-img">
+                    <div class="card-content">
+                        <span class="card-tag">急救知识</span>
+                        <h3 class="card-title">伤口处理与急救</h3>
+                        <p class="card-text">若不幸遭遇攻击，首要任务是止血。利用压力止血法，并用干净的布料加压包扎。尽快上岸或寻求救援，并寻求专业医疗帮助。</p>
+                        <a href="#" class="card-link">查看急救手册</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 实用技巧 -->
+        <section id="tips">
+            <h2 class="section-title">日常冲浪安全贴士</h2>
+            <div class="tips-list">
+                <div class="tip-item">
+                    <strong>避免佩戴鲜艳衣物</strong>
+                    <p style="font-size:0.9rem; color:#666;">避免穿着鲜红、黄色等高对比度颜色的泳衣，因为鲨鱼对高对比度非常敏感。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>减少血液刺激</strong>
+                    <p style="font-size:0.9rem; color:#666;">女性生理期或轻微擦伤会释放血液，应尽量避免在生理期进行高强度的海上活动。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>结伴而行</strong>
+                    <p style="font-size:0.9rem; color:#666;">冲浪最好结伴而行，一旦发生意外，同伴可以立即提供帮助或发出求救信号。</p>
+                </div>
+                <div class="tip-item">
+                    <strong>保持清洁</strong>
+                    <p style="font-size:0.9rem; color:#666;">离开水面后，务必彻底清洗冲浪板，防止残留的鱼血或鱼腥味吸引鲨鱼。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">鲨鱼攻击冲浪者时通常发生在什么情况下？</div>
+                <div class="faq-answer">大多数鲨鱼攻击是“试探性攻击”，它们将冲浪板误认为是猎物（鱼类）。这通常发生在冲浪者处于水中静止或缓慢移动，且冲浪板颜色鲜艳时。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">被鲨鱼咬伤后还能继续冲浪吗？</div>
+                <div class="faq-answer">这取决于伤口的严重程度。轻微擦伤在医生确认无感染风险后，通常可以恢复；但大面积撕咬或涉及深层组织损伤，医生会建议长期休养，避免重复受伤。</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">所有鲨鱼都危险吗？</div>
+                <div class="faq-answer">并非所有鲨鱼都对人类构成威胁。大白鲨和虎鲨是主要威胁，但礁鲨、双髻鲨等体型较小、性情温和的鲨类通常不会主动攻击人类。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>海洋安全网</h4>
+                <p style="color: #b2bec3; font-size: 0.9rem;">致力于为户外运动爱好者提供最专业的水域安全知识与生存指南。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">安全装备推荐</a></li>
+                    <li><a href="#">联系救援</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关资源</h4>
+                <ul>
+                    <li><a href="#">国际鲨鱼档案</a></li>
+                    <li><a href="#">海岸警卫队指南</a></li>
+                    <li><a href="#">急救课程</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 海洋安全网保留所有权利。本站内容仅供参考，不构成医疗或法律建议。
+        </div>
+    </footer>
+
+</body>
+</html>
